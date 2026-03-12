@@ -460,91 +460,92 @@
 
     <!-- Скрипты -->
     <script src="script.js"></script>
-    
-    <!-- Скрипт загрузки данных из localStorage (для админки) -->
+
+    <!-- Скрипт загрузки данных галереи -->
     <script>
         // Глобальные переменные для лайтбокса
         let currentGalleryData = [];
         let currentImageIndex = 0;
-        
-        // Загрузка данных галереи из localStorage если есть
+
+        // Загрузка данных галереи из JSON файла
         (function() {
-            const STORAGE_KEY = 'vatnost_gallery';
-            const stored = localStorage.getItem(STORAGE_KEY);
-            
-            if (stored) {
+            // Ждём загрузки основной страницы
+            document.addEventListener('DOMContentLoaded', async function() {
+                const galleryGrid = document.querySelector('.gallery__grid');
+                if (!galleryGrid) return;
+
                 try {
-                    currentGalleryData = JSON.parse(stored);
+                    // Загружаем данные из gallery-data.json
+                    const response = await fetch('gallery-data.json');
+                    if (!response.ok) throw new Error('Не удалось загрузить gallery-data.json');
                     
-                    // Ждём загрузки основной страницы
-                    document.addEventListener('DOMContentLoaded', function() {
-                        const galleryGrid = document.querySelector('.gallery__grid');
-                        if (!galleryGrid || currentGalleryData.length === 0) return;
-                        
-                        // Рендеринг галереи из localStorage
-                        galleryGrid.innerHTML = currentGalleryData.map((work, index) => {
-                            const badgeHtml = work.badge ? 
-                                `<span class="gallery__badge ${work.badge === 'Новинка' ? 'gallery__badge--new' : work.badge === 'Редкость' ? 'gallery__badge--rare' : ''}">${work.badge}</span>` : '';
-                            
-                            const priceHtml = work.price ? 
-                                `<span class="gallery__price">${formatPrice(work.price)}</span>` : '';
-                            
-                            return `
-                                <article class="gallery__card fade-in" data-index="${index}">
-                                    <div class="gallery__card-image">
-                                        ${badgeHtml}
-                                        <img src="${work.image}" alt="${work.title}" loading="lazy">
-                                        <div class="gallery__card-overlay">
-                                            <span class="gallery__card-view">Посмотреть</span>
-                                        </div>
+                    currentGalleryData = await response.json();
+
+                    if (currentGalleryData.length === 0) return;
+
+                    // Рендеринг галереи
+                    galleryGrid.innerHTML = currentGalleryData.map((work, index) => {
+                        const badgeHtml = work.badge ?
+                            `<span class="gallery__badge ${work.badge === 'Новинка' ? 'gallery__badge--new' : work.badge === 'Редкость' ? 'gallery__badge--rare' : ''}">${work.badge}</span>` : '';
+
+                        const priceHtml = work.price ?
+                            `<span class="gallery__price">${formatPrice(work.price)}</span>` : '';
+
+                        return `
+                            <article class="gallery__card fade-in" data-index="${index}">
+                                <div class="gallery__card-image">
+                                    ${badgeHtml}
+                                    <img src="${work.image}" alt="${work.title}" loading="lazy">
+                                    <div class="gallery__card-overlay">
+                                        <span class="gallery__card-view">Посмотреть</span>
                                     </div>
-                                    <div class="gallery__card-content">
-                                        <h3 class="gallery__card-title">${escapeHtml(work.title)}</h3>
-                                        <p class="gallery__card-desc">${escapeHtml(work.description || '')}</p>
-                                        ${priceHtml}
-                                    </div>
-                                </article>
-                            `;
-                        }).join('');
-                        
-                        // Добавляем обработчики клика на карточки
-                        document.querySelectorAll('.gallery__card').forEach(card => {
-                            card.addEventListener('click', function() {
-                                const index = parseInt(this.dataset.index);
-                                openLightbox(index);
-                            });
+                                </div>
+                                <div class="gallery__card-content">
+                                    <h3 class="gallery__card-title">${escapeHtml(work.title)}</h3>
+                                    <p class="gallery__card-desc">${escapeHtml(work.description || '')}</p>
+                                    ${priceHtml}
+                                </div>
+                            </article>
+                        `;
+                    }).join('');
+
+                    // Добавляем обработчики клика на карточки
+                    document.querySelectorAll('.gallery__card').forEach(card => {
+                        card.addEventListener('click', function() {
+                            const index = parseInt(this.dataset.index);
+                            openLightbox(index);
                         });
-                        
-                        // Перезапуск анимаций
-                        if (window.initScrollAnimations) {
-                            setTimeout(() => {
-                                const fadeElements = document.querySelectorAll('.gallery__card');
-                                fadeElements.forEach((el, i) => {
-                                    setTimeout(() => el.classList.add('visible'), i * 100);
-                                });
-                            }, 100);
-                        }
-                        
-                        console.log('Галерея загружена из localStorage:', currentGalleryData.length, 'работ');
                     });
-                    
-                    // Форматирование цены
-                    function formatPrice(price) {
-                        const num = typeof price === 'string' ? price.replace(/\s/g, '').replace('₽', '') : price;
-                        return new Intl.NumberFormat('ru-RU').format(Number(num)) + ' ₽';
+
+                    // Перезапуск анимаций
+                    if (window.initScrollAnimations) {
+                        setTimeout(() => {
+                            const fadeElements = document.querySelectorAll('.gallery__card');
+                            fadeElements.forEach((el, i) => {
+                                setTimeout(() => el.classList.add('visible'), i * 100);
+                            });
+                        }, 100);
                     }
-                    
-                    // Экранирование HTML
-                    function escapeHtml(text) {
-                        if (!text) return '';
-                        const div = document.createElement('div');
-                        div.textContent = text;
-                        return div.innerHTML;
-                    }
-                    
+
+                    console.log('Галерея загружена:', currentGalleryData.length, 'работ');
+
                 } catch (e) {
-                    console.error('Ошибка загрузки галереи из localStorage:', e);
+                    console.error('Ошибка загрузки галереи:', e);
                 }
+            });
+
+            // Форматирование цены
+            function formatPrice(price) {
+                const num = typeof price === 'string' ? price.replace(/\s/g, '').replace('₽', '') : price;
+                return new Intl.NumberFormat('ru-RU').format(Number(num)) + ' ₽';
+            }
+
+            // Экранирование HTML
+            function escapeHtml(text) {
+                if (!text) return '';
+                const div = document.createElement('div');
+                div.textContent = text;
+                return div.innerHTML;
             }
         })();
         
