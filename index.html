@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Персональное портфолио в винтажном стиле">
     <title>Портфолио | Винтажный Стиль</title>
-    
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-    
+
     <!-- Стили -->
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -21,7 +21,7 @@
             <a href="#" class="header__logo">
                 <span class="header__logo-text">Ватность Моя</span>
             </a>
-            
+
             <nav class="header__nav" id="nav">
                 <ul class="header__menu">
                     <li class="header__menu-item">
@@ -38,7 +38,7 @@
                     </li>
                 </ul>
             </nav>
-            
+
             <button class="header__theme-toggle" id="themeToggle" aria-label="Переключить тему">
                 <svg class="theme-icon theme-icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <circle cx="12" cy="12" r="5"/>
@@ -48,7 +48,7 @@
                     <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
                 </svg>
             </button>
-            
+
             <button class="header__burger" id="burger" aria-label="Открыть меню">
                 <span></span>
                 <span></span>
@@ -95,7 +95,7 @@
                     <p class="about__text fade-in">
                         Наша миссия — сохранить и передать красоту ручного труда будущим поколениям, показывая, что игрушки могут быть не просто развлечением, но и настоящим искусством.
                     </p>
-                    
+
                     <div class="about__stats fade-in">
                         <div class="stat">
                             <span class="stat__number">500+</span>
@@ -131,147 +131,111 @@
                 <p class="section-subtitle fade-in">
                     Избранные экспонаты нашей коллекции
                 </p>
-                
+
                 <div class="gallery__grid">
                     <!-- Карточка 1 -->
-                    <article class="gallery__card fade-in">
+                    <article class="gallery__card fade-in" data-index="0">
                         <div class="gallery__card-image">
-                            <span class="gallery__badge">Винтаж</span>
-                            <div class="gallery__card-placeholder">
-                                <svg viewBox="0 0 100 100" fill="currentColor">
-                                    <rect x="20" y="25" width="60" height="50" rx="3"/>
-                                    <circle cx="50" cy="45" r="12"/>
-                                    <path d="M35 55 L50 45 L65 55"/>
-                                </svg>
-                            </div>
+                            <span class="gallery__badge gallery__badge--new">Новинка</span>
+                            <img src="pic/20260305_142615-.jpg" alt="Дед Мороз и лето" loading="lazy">
                             <div class="gallery__card-overlay">
                                 <span class="gallery__card-view">Посмотреть</span>
                             </div>
                         </div>
                         <div class="gallery__card-content">
-                            <h3 class="gallery__card-title">Фарфоровая кукла "Мария"</h3>
-                            <p class="gallery__card-desc">
-                                Авторская кукла ручной работы, Франция, 1920-е годы
-                            </p>
-                            <span class="gallery__price">45 000 ₽</span>
+                            <h3 class="gallery__card-title">Дед Мороз и лето</h3>
+                            <p class="gallery__card-desc">Выполнен из льняной и хлопковой ваты, глины</p>
+                            <span class="gallery__price">5 ₽</span>
                         </div>
                     </article>
 
                     <!-- Карточка 2 -->
-                    <article class="gallery__card fade-in">
+                    <article class="gallery__card fade-in" data-index="1">
                         <div class="gallery__card-image">
-                            <span class="gallery__badge gallery__badge--new">Новинка</span>
-                            <div class="gallery__card-placeholder">
-                                <svg viewBox="0 0 100 100" fill="currentColor">
-                                    <rect x="20" y="25" width="60" height="50" rx="3"/>
-                                    <circle cx="50" cy="45" r="12"/>
-                                    <path d="M35 55 L50 45 L65 55"/>
-                                </svg>
-                            </div>
+                            <img src="pic/Image00001.jpg" alt="Игрушка 1" loading="lazy">
                             <div class="gallery__card-overlay">
                                 <span class="gallery__card-view">Посмотреть</span>
                             </div>
                         </div>
                         <div class="gallery__card-content">
-                            <h3 class="gallery__card-title">Плюшевый мишка "Теодор"</h3>
-                            <p class="gallery__card-desc">
-                                Коллекционный мишка из мохера, Германия, мастер Hans Müller
-                            </p>
-                            <span class="gallery__price">28 000 ₽</span>
+                            <h3 class="gallery__card-title">Игрушка 1</h3>
+                            <p class="gallery__card-desc">Авторская игрушка ручной работы</p>
+                            <span class="gallery__price">1 000 ₽</span>
                         </div>
                     </article>
 
                     <!-- Карточка 3 -->
-                    <article class="gallery__card fade-in">
+                    <article class="gallery__card fade-in" data-index="2">
                         <div class="gallery__card-image">
-                            <div class="gallery__card-placeholder">
-                                <svg viewBox="0 0 100 100" fill="currentColor">
-                                    <rect x="20" y="25" width="60" height="50" rx="3"/>
-                                    <circle cx="50" cy="45" r="12"/>
-                                    <path d="M35 55 L50 45 L65 55"/>
-                                </svg>
-                            </div>
+                            <img src="pic/Image00002.jpg" alt="Игрушка 2" loading="lazy">
                             <div class="gallery__card-overlay">
                                 <span class="gallery__card-view">Посмотреть</span>
                             </div>
                         </div>
                         <div class="gallery__card-content">
-                            <h3 class="gallery__card-title">Деревянный солдатик</h3>
-                            <p class="gallery__card-desc">
-                                Ручная резьба, Россия, XIX век
-                            </p>
-                            <span class="gallery__price">65 000 ₽</span>
+                            <h3 class="gallery__card-title">Игрушка 2</h3>
+                            <p class="gallery__card-desc">Авторская игрушка ручной работы</p>
+                            <span class="gallery__price">1 000 ₽</span>
                         </div>
                     </article>
 
                     <!-- Карточка 4 -->
-                    <article class="gallery__card fade-in">
+                    <article class="gallery__card fade-in" data-index="3">
                         <div class="gallery__card-image">
-                            <span class="gallery__badge gallery__badge--rare">Редкость</span>
-                            <div class="gallery__card-placeholder">
-                                <svg viewBox="0 0 100 100" fill="currentColor">
-                                    <rect x="20" y="25" width="60" height="50" rx="3"/>
-                                    <circle cx="50" cy="45" r="12"/>
-                                    <path d="M35 55 L50 45 L65 55"/>
-                                </svg>
-                            </div>
+                            <img src="pic/Image00003.jpg" alt="Игрушка 3" loading="lazy">
                             <div class="gallery__card-overlay">
                                 <span class="gallery__card-view">Посмотреть</span>
                             </div>
                         </div>
                         <div class="gallery__card-content">
-                            <h3 class="gallery__card-title">Зайка "Алиса"</h3>
-                            <p class="gallery__card-desc">
-                                Винтажный зайка с подвижными лапками, Англия, 1950-е
-                            </p>
-                            <span class="gallery__price">32 000 ₽</span>
+                            <h3 class="gallery__card-title">Игрушка 3</h3>
+                            <p class="gallery__card-desc">Авторская игрушка ручной работы</p>
+                            <span class="gallery__price">1 000 ₽</span>
                         </div>
                     </article>
 
                     <!-- Карточка 5 -->
-                    <article class="gallery__card fade-in">
+                    <article class="gallery__card fade-in" data-index="4">
                         <div class="gallery__card-image">
-                            <div class="gallery__card-placeholder">
-                                <svg viewBox="0 0 100 100" fill="currentColor">
-                                    <rect x="20" y="25" width="60" height="50" rx="3"/>
-                                    <circle cx="50" cy="45" r="12"/>
-                                    <path d="M35 55 L50 45 L65 55"/>
-                                </svg>
-                            </div>
+                            <img src="pic/Image00005.jpg" alt="Игрушка 4" loading="lazy">
                             <div class="gallery__card-overlay">
                                 <span class="gallery__card-view">Посмотреть</span>
                             </div>
                         </div>
                         <div class="gallery__card-content">
-                            <h3 class="gallery__card-title">Лягушонок "Жак"</h3>
-                            <p class="gallery__card-desc">
-                                Шелковая игрушка, Франция, современная работа
-                            </p>
-                            <span class="gallery__price">18 500 ₽</span>
+                            <h3 class="gallery__card-title">Игрушка 4</h3>
+                            <p class="gallery__card-desc">Авторская игрушка ручной работы</p>
+                            <span class="gallery__price">1 000 ₽</span>
                         </div>
                     </article>
 
                     <!-- Карточка 6 -->
-                    <article class="gallery__card fade-in">
+                    <article class="gallery__card fade-in" data-index="5">
                         <div class="gallery__card-image">
-                            <span class="gallery__badge gallery__badge--new">Новинка</span>
-                            <div class="gallery__card-placeholder">
-                                <svg viewBox="0 0 100 100" fill="currentColor">
-                                    <rect x="20" y="25" width="60" height="50" rx="3"/>
-                                    <circle cx="50" cy="45" r="12"/>
-                                    <path d="M35 55 L50 45 L65 55"/>
-                                </svg>
-                            </div>
+                            <img src="pic/Image00010.jpg" alt="Игрушка 5" loading="lazy">
                             <div class="gallery__card-overlay">
                                 <span class="gallery__card-view">Посмотреть</span>
                             </div>
                         </div>
                         <div class="gallery__card-content">
-                            <h3 class="gallery__card-title">Робот "Винсент"</h3>
-                            <p class="gallery__card-desc">
-                                Стимпанк робот, авторская работа, 2024
-                            </p>
-                            <span class="gallery__price">42 000 ₽</span>
+                            <h3 class="gallery__card-title">Игрушка 5</h3>
+                            <p class="gallery__card-desc">Авторская игрушка ручной работы</p>
+                            <span class="gallery__price">1 000 ₽</span>
+                        </div>
+                    </article>
+
+                    <!-- Карточка 7 -->
+                    <article class="gallery__card fade-in" data-index="6">
+                        <div class="gallery__card-image">
+                            <img src="pic/Image00015.jpg" alt="Игрушка 6" loading="lazy">
+                            <div class="gallery__card-overlay">
+                                <span class="gallery__card-view">Посмотреть</span>
+                            </div>
+                        </div>
+                        <div class="gallery__card-content">
+                            <h3 class="gallery__card-title">Игрушка 6</h3>
+                            <p class="gallery__card-desc">Авторская игрушка ручной работы</p>
+                            <span class="gallery__price">1 000 ₽</span>
                         </div>
                     </article>
                 </div>
@@ -282,7 +246,7 @@
         <section class="reviews" id="reviews">
             <div class="container">
                 <h2 class="section-title fade-in">Отзывы коллекционеров</h2>
-                
+
                 <div class="reviews__grid">
                     <div class="review__card fade-in">
                         <div class="review__stars">★★★★★</div>
@@ -294,7 +258,7 @@
                             <span class="review__name">Елена В.</span>
                         </div>
                     </div>
-                    
+
                     <div class="review__card fade-in">
                         <div class="review__stars">★★★★★</div>
                         <p class="review__text">
@@ -305,7 +269,7 @@
                             <span class="review__name">Александр П.</span>
                         </div>
                     </div>
-                    
+
                     <div class="review__card fade-in">
                         <div class="review__stars">★★★★★</div>
                         <p class="review__text">
@@ -327,7 +291,7 @@
                 <p class="section-subtitle fade-in">
                     Мы всегда рады ответить на ваши вопросы
                 </p>
-                
+
                 <div class="contact__wrapper">
                     <div class="contact__info-left fade-in">
                         <div class="contact__info-item">
@@ -340,7 +304,7 @@
                                 <p class="contact__info-text">г.Иркутск, ул.Петрова, 28</p>
                             </div>
                         </div>
-                        
+
                         <div class="contact__info-item">
                             <svg class="contact__info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
@@ -351,7 +315,7 @@
                                 <p class="contact__info-text"><a href="mailto:info@vatnost-moya.ru">info@vatnost-moya.ru</a></p>
                             </div>
                         </div>
-                        
+
                         <div class="contact__info-item">
                             <svg class="contact__info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
@@ -362,43 +326,43 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <form class="contact__form fade-in" id="contactForm" novalidate>
                         <div class="contact__field">
-                            <input 
-                                type="text" 
-                                name="name" 
-                                class="contact__input" 
+                            <input
+                                type="text"
+                                name="name"
+                                class="contact__input"
                                 placeholder="Ваше имя"
                                 required
                             >
                             <span class="contact__error" id="nameError"></span>
                         </div>
-                        
+
                         <div class="contact__field">
-                            <input 
-                                type="email" 
-                                name="email" 
-                                class="contact__input" 
+                            <input
+                                type="email"
+                                name="email"
+                                class="contact__input"
                                 placeholder="Email"
                                 required
                             >
                             <span class="contact__error" id="emailError"></span>
                         </div>
-                        
+
                         <div class="contact__field">
-                            <textarea 
-                                name="message" 
-                                class="contact__textarea" 
+                            <textarea
+                                name="message"
+                                class="contact__textarea"
                                 placeholder="Сообщение"
                                 rows="4"
                                 required
                             ></textarea>
                             <span class="contact__error" id="messageError"></span>
                         </div>
-                        
+
                         <button type="submit" class="contact__btn">Отправить</button>
-                        
+
                         <div class="contact__status" id="formStatus"></div>
                     </form>
                 </div>
@@ -461,127 +425,112 @@
     <!-- Скрипты -->
     <script src="script.js"></script>
 
-    <!-- Скрипт загрузки данных галереи -->
+    <!-- Скрипт галереи -->
     <script>
         // Глобальные переменные для лайтбокса
         let currentGalleryData = [];
         let currentImageIndex = 0;
 
-        // Загрузка данных галереи из JSON файла
-        (function() {
-            // Ждём загрузки основной страницы
-            document.addEventListener('DOMContentLoaded', async function() {
-                const galleryGrid = document.querySelector('.gallery__grid');
-                if (!galleryGrid) return;
+        // Данные галереи (статические)
+        const galleryData = [
+            {
+                title: "Дед Мороз и лето",
+                description: "Выполнен из льняной и хлопковой ваты, глины",
+                price: "5",
+                badge: "Новинка",
+                image: "pic/20260305_142615-.jpg"
+            },
+            {
+                title: "Игрушка 1",
+                description: "Авторская игрушка ручной работы",
+                price: "1000",
+                badge: "",
+                image: "pic/Image00001.jpg"
+            },
+            {
+                title: "Игрушка 2",
+                description: "Авторская игрушка ручной работы",
+                price: "1000",
+                badge: "",
+                image: "pic/Image00002.jpg"
+            },
+            {
+                title: "Игрушка 3",
+                description: "Авторская игрушка ручной работы",
+                price: "1000",
+                badge: "",
+                image: "pic/Image00003.jpg"
+            },
+            {
+                title: "Игрушка 4",
+                description: "Авторская игрушка ручной работы",
+                price: "1000",
+                badge: "",
+                image: "pic/Image00005.jpg"
+            },
+            {
+                title: "Игрушка 5",
+                description: "Авторская игрушка ручной работы",
+                price: "1000",
+                badge: "",
+                image: "pic/Image00010.jpg"
+            },
+            {
+                title: "Игрушка 6",
+                description: "Авторская игрушка ручной работы",
+                price: "1000",
+                badge: "",
+                image: "pic/Image00015.jpg"
+            }
+        ];
 
-                try {
-                    // Загружаем данные из gallery-data.json
-                    const response = await fetch('gallery-data.json');
-                    if (!response.ok) throw new Error('Не удалось загрузить gallery-data.json');
-                    
-                    currentGalleryData = await response.json();
+        // Инициализация галереи
+        document.addEventListener('DOMContentLoaded', function() {
+            currentGalleryData = galleryData;
 
-                    if (currentGalleryData.length === 0) return;
-
-                    // Рендеринг галереи
-                    galleryGrid.innerHTML = currentGalleryData.map((work, index) => {
-                        const badgeHtml = work.badge ?
-                            `<span class="gallery__badge ${work.badge === 'Новинка' ? 'gallery__badge--new' : work.badge === 'Редкость' ? 'gallery__badge--rare' : ''}">${work.badge}</span>` : '';
-
-                        const priceHtml = work.price ?
-                            `<span class="gallery__price">${formatPrice(work.price)}</span>` : '';
-
-                        return `
-                            <article class="gallery__card fade-in" data-index="${index}">
-                                <div class="gallery__card-image">
-                                    ${badgeHtml}
-                                    <img src="${work.image}" alt="${work.title}" loading="lazy">
-                                    <div class="gallery__card-overlay">
-                                        <span class="gallery__card-view">Посмотреть</span>
-                                    </div>
-                                </div>
-                                <div class="gallery__card-content">
-                                    <h3 class="gallery__card-title">${escapeHtml(work.title)}</h3>
-                                    <p class="gallery__card-desc">${escapeHtml(work.description || '')}</p>
-                                    ${priceHtml}
-                                </div>
-                            </article>
-                        `;
-                    }).join('');
-
-                    // Добавляем обработчики клика на карточки
-                    document.querySelectorAll('.gallery__card').forEach(card => {
-                        card.addEventListener('click', function() {
-                            const index = parseInt(this.dataset.index);
-                            openLightbox(index);
-                        });
-                    });
-
-                    // Перезапуск анимаций
-                    if (window.initScrollAnimations) {
-                        setTimeout(() => {
-                            const fadeElements = document.querySelectorAll('.gallery__card');
-                            fadeElements.forEach((el, i) => {
-                                setTimeout(() => el.classList.add('visible'), i * 100);
-                            });
-                        }, 100);
-                    }
-
-                    console.log('Галерея загружена:', currentGalleryData.length, 'работ');
-
-                } catch (e) {
-                    console.error('Ошибка загрузки галереи:', e);
-                }
+            // Добавляем обработчики клика на карточки
+            document.querySelectorAll('.gallery__card').forEach((card, index) => {
+                card.addEventListener('click', function() {
+                    openLightbox(index);
+                });
             });
 
-            // Форматирование цены
-            function formatPrice(price) {
-                const num = typeof price === 'string' ? price.replace(/\s/g, '').replace('₽', '') : price;
-                return new Intl.NumberFormat('ru-RU').format(Number(num)) + ' ₽';
-            }
+            console.log('Галерея загружена:', currentGalleryData.length, 'работ');
+        });
 
-            // Экранирование HTML
-            function escapeHtml(text) {
-                if (!text) return '';
-                const div = document.createElement('div');
-                div.textContent = text;
-                return div.innerHTML;
-            }
-        })();
-        
         // Лайтбокс - просмотр изображений
         function openLightbox(index) {
             if (currentGalleryData.length === 0) return;
-            
+
             currentImageIndex = index;
             const lightbox = document.getElementById('lightbox');
             const lightboxImage = document.getElementById('lightboxImage');
             const lightboxCaption = document.getElementById('lightboxCaption');
             const work = currentGalleryData[index];
-            
+
             lightboxImage.src = work.image;
             lightboxImage.alt = work.title;
             lightboxCaption.textContent = work.title + (work.description ? ' — ' + work.description : '');
             lightbox.classList.add('active');
             document.body.style.overflow = 'hidden';
         }
-        
+
         function closeLightbox() {
             const lightbox = document.getElementById('lightbox');
             lightbox.classList.remove('active');
             document.body.style.overflow = '';
         }
-        
+
         function showPrevImage() {
             currentImageIndex = (currentImageIndex - 1 + currentGalleryData.length) % currentGalleryData.length;
             openLightbox(currentImageIndex);
         }
-        
+
         function showNextImage() {
             currentImageIndex = (currentImageIndex + 1) % currentGalleryData.length;
             openLightbox(currentImageIndex);
         }
-        
+
         // Инициализация обработчиков лайтбокса
         document.addEventListener('DOMContentLoaded', function() {
             const lightbox = document.getElementById('lightbox');
@@ -589,12 +538,12 @@
             const lightboxClose = document.getElementById('lightboxClose');
             const lightboxPrev = document.getElementById('lightboxPrev');
             const lightboxNext = document.getElementById('lightboxNext');
-            
+
             if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
             if (lightboxOverlay) lightboxOverlay.addEventListener('click', closeLightbox);
             if (lightboxPrev) lightboxPrev.addEventListener('click', showPrevImage);
             if (lightboxNext) lightboxNext.addEventListener('click', showNextImage);
-            
+
             // Закрытие по ESC
             document.addEventListener('keydown', function(e) {
                 if (e.key === 'Escape') closeLightbox();
